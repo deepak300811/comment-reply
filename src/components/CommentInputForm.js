@@ -8,6 +8,15 @@ const [errorObj,setErrorObj] = useState({
   nameError:"",
   commentError:""
 })
+
+useEffect(()=>{
+    if(commentToEdit?.name){
+      setErrorObj({
+        nameError:"",
+        commentError:""
+      })
+    }
+},[commentToEdit])
 const sendComment =()=>{
   if(!name.trim() || !comment.trim()){
    const tempObj={};
